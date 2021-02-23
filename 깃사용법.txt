@@ -1,0 +1,244 @@
+github.com/ 접속 로그인 먼저 한다.  
+
+
+
+업로드 할 폴더 선택 그리고 역슬래쉬를 슬래쉬로 변경
+탐색창에서 폴더 위치 복사 붙이기 
+
+D:\국기과정_문선종\교육산출물\01/02_01
+
+///////////////////////////////////////////////
+깃배쉬에서 경로 변경
+
+$ cd D:/국기과정_문선종/교육산출물/01/02_01
+
+
+
+///////////////////////////////////////////////
+경로확인 
+
+$ pwd
+D:/국기과정_문선종/교육산출물/01/02_01
+
+
+
+///////////////////////////////////////////////
+목록 보기 자세히 -l 그리고 숨겨진 파일 목록보기 -a  >>  -la 또는 -al
+
+$ ls -la
+total 8
+drwxr-xr-x 1 User 197121    0 Feb  2 11:17 ./
+drwxr-xr-x 1 User 197121    0 Feb  2 11:15 ../
+drwxr-xr-x 1 User 197121    0 Feb  1 18:30 css/
+drwxr-xr-x 1 User 197121    0 Feb  1 18:30 icon/
+drwxr-xr-x 1 User 197121    0 Feb  1 18:30 img/
+-rw-r--r-- 1 User 197121 1965 Feb  1 16:58 index.html
+
+
+
+///////////////////////////////////////////////
+화면지우기(청소)
+
+clear
+
+
+
+
+///////////////////////////////////////////////
+버전관리 필수 사항  
+깃 설정 : 깃허브에 접속하기 위한 환경설정(로그인정보 기록)  
+
+.git 폴더 생성
+
+
+
+///////////////////////////////////////////////
+$ git init [엔터]
+Initialized empty Git repository in D:/국기과정_문선종/교육산출물/01/02_01/.git/
+
+
+
+///////////////////////////////////////////////
+깃 설정(폴더 .git) 확인
+
+$ ls -la
+total 12
+drwxr-xr-x 1 User 197121    0 Feb  2 11:25 ./
+drwxr-xr-x 1 User 197121    0 Feb  2 11:15 ../
+drwxr-xr-x 1 User 197121    0 Feb  2 11:25 .git/
+drwxr-xr-x 1 User 197121    0 Feb  1 18:30 css/
+drwxr-xr-x 1 User 197121    0 Feb  1 18:30 icon/
+drwxr-xr-x 1 User 197121    0 Feb  1 18:30 img/
+-rw-r--r-- 1 User 197121 1965 Feb  1 16:58 index.html
+
+
+
+///////////////////////////////////////////////
+환경설정(configulation) config : 사용자(user) 이메일(email) 설정  'moonseonjong@naver.com'
+
+$ git config user.email 'moonseonjong@naver.com'
+
+
+
+
+///////////////////////////////////////////////
+확인
+
+$ git config user.email
+moonseonjong@naver.com
+
+
+
+
+///////////////////////////////////////////////
+환경설정(configulation) config : 사용자(user) 이름(name) 설정  'moonseonjongjs'
+
+$ git config user.name 'moonseonjongjs'
+
+
+
+
+///////////////////////////////////////////////
+웹브라우로 깃허브를 접속 github.com 로그인 
+리포토리(Repositories) 원격접속(remote)할 리포지토리 선택
+그리고 리포지토리 주소 복사
+https://github.com/moonjongjs/layout1.git  : origin
+
+명령어 구문
+git remote add origin  리포지토리 주소 붙여넣기
+
+
+
+
+//////////////////////////////////////////////////////////////
+깃 리포지토리 원격 접속
+
+$ git remote add origin https://github.com/moonjongjs/layout1.git
+
+
+
+
+/////////////////////////////////////////////////////////////
+원격접속 확인
+
+$ git remote -v
+origin  https://github.com/moonjongjs/layout1.git (fetch)
+origin  https://github.com/moonjongjs/layout1.git (push)
+
+
+
+
+/////////////////////////////////////////////////////////////
+업로드(push) 할 파일 선택하기(모두선택)
+1개의 파일 선택 업로드 추가(add) 선택(스테이징)
+
+$ git add index.html
+
+
+
+/////////////////////////////////////////////////////////////
+업로드할 파일을 커밋(commit)하게 
+수정내용및 삭제 , 추가등을 체크 확인 절차
+
+$ git commit -m 'Upload 2021-02-02'
+
+[master (root-commit) 57af734] Upload 2021-02-02
+ 12 files changed, 5122 insertions(+)
+ create mode 100644 css/reset.css
+ create mode 100644 css/style.css
+ create mode 100644 icon/css/font-awesome.css
+ create mode 100644 icon/fontawesome.js
+ create mode 100644 icon/fonts/FontAwesome.otf
+ create mode 100644 icon/fonts/fontawesome-webfont.eot
+ create mode 100644 icon/fonts/fontawesome-webfont.svg
+ create mode 100644 icon/fonts/fontawesome-webfont.ttf
+ create mode 100644 icon/fonts/fontawesome-webfont.woff
+ create mode 100644 icon/fonts/fontawesome-webfont.woff2
+ create mode 100644 img/Thumbs.db
+ create mode 100644 index.html
+
+
+
+
+/////////////////////////////////////////////////////////////
+최종 업로드(push) 하기
+
+
+$ git push origin master
+Enumerating objects: 19, done.
+Counting objects: 100% (19/19), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (17/17), done.
+Writing objects: 100% (19/19), 1.03 MiB | 533.00 KiB/s, done.
+Total 19 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/moonjongjs/layout1.git
+ * [new branch]      master -> master
+
+
+
+///////////////////////////////////////////////////////////////////////
+업로드 후에 수정하고 다시 스테이징(add)하고 커밋(commit)하고 푸쉬(push)하기
+그리고 깃허브 리포지토리 클릭 확인하기
+
+
+
+///////////////
+$ git add .
+
+
+///////////////////////////////////////////
+$ git commit -m 'Update 2021-02-02 12:30'
+[master 1aedb0f] Update 2021-02-02 12:30
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+
+////////////////////////
+$ git push origin master
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 533 bytes | 533.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/moonjongjs/layout1.git
+   57af734..1aedb0f  master -> master
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
